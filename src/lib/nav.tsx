@@ -1,8 +1,48 @@
+'use client';
+
 import Link from 'next/link';
 import { AlbumList, AlbumTitle } from '../types/albums';
-import React from 'react';
+import React, { useState } from 'react';
 import { GlobeIcon, InfoIcon, SocialIcon } from './icons';
 import { titleToSlug } from './api/slug';
+import { THEME_COLORS } from './colors';
+
+const GlobeLink: React.FC = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <Link
+      href="/"
+      className={`font-bold block leading-none tracking-tight duration-200 ease-in-out transition-colors`}
+      style={{ color: isHovered ? THEME_COLORS.PRIMARY : undefined }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <GlobeIcon />
+    </Link>
+  );
+};
+
+const AlbumLink: React.FC<{
+  href: string;
+  children: React.ReactNode;
+  isActive: boolean;
+}> = ({ href, children, isActive }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <Link
+      href={href}
+      className={isActive ? 'font-bold' : ''}
+      style={{ color: !isActive && isHovered ? THEME_COLORS.PRIMARY : undefined }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      prefetch={false}
+    >
+      {children}
+    </Link>
+  );
+};
 
 export const Nav: React.FC<{
   title?: AlbumTitle;
@@ -11,12 +51,7 @@ export const Nav: React.FC<{
   return (
     <nav className="text-lg max-sm:!text-2xl" {...props}>
       <h1 className="mb-10 max-sm:flex max-sm:justify-center">
-        <Link
-          href="/"
-          className={`hover:text-red-600 font-bold block leading-none tracking-tight duration-200 ease-in-out transition-colors`}
-        >
-          <GlobeIcon />
-        </Link>
+        <GlobeLink />
       </h1>
 
       <ul className="flex flex-col max-sm:items-center max-sm:mb-8 content-start tracking-tight">
@@ -24,13 +59,12 @@ export const Nav: React.FC<{
           const isActive = title.toLowerCase() === album.title.toLowerCase();
           return (
             <li key={album.title} className="max-w-fit">
-              <Link
+              <AlbumLink
                 href={`/${titleToSlug(album.title)}`}
-                className={isActive ? 'font-bold' : 'hover:text-gray-500'}
-                prefetch={false}
+                isActive={isActive}
               >
                 {album.title}
-              </Link>
+              </AlbumLink>
             </li>
           );
         })}

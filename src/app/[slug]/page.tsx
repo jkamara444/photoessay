@@ -16,14 +16,14 @@ export async function generateStaticParams() {
 
 async function AlbumPage({ params: { slug } }: { params: { slug: string } }) {
   const albums = await getAlbums();
-  const title = slugToAlbumTitle(slug);
-  const { album, photos } = await getAlbum(title);
+  const album = await getAlbum(slug);
+  const photos = album?.photos || [];
   const tags = useTags(album);
 
   return (
     <section className="flex flex-col sm:flex-row sm:my-20" id="top">
       <div className="pt-10 sm:pl-10 sm:pr-20 lg:pl-20 lg:pr-40 space-y-1">
-        <Nav albums={albums} title={title} />
+        <Nav albums={albums} title={album?.title || ''} />
       </div>
 
       <div className="flex flex-col items-start mt-6">
@@ -38,7 +38,7 @@ async function AlbumPage({ params: { slug } }: { params: { slug: string } }) {
           </div>
           <div className="flex items-end justify-between gap-24">
             <h1 className="font-normal text-2xl text-gray-600 mt-4 min-w-32">
-              {title}
+              {album?.title}
             </h1>
             <div
               className={`flex items-end justify-end flex-wrap-reverse gap-2
