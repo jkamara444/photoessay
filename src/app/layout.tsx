@@ -9,13 +9,13 @@ const sansSerifFont = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Aaron Agarunov',
+  title: 'Jasmine Kamara',
   description: 'Photography Portfolio',
   openGraph: {
-    title: 'Aaron Agarunov',
+    title: 'Jasmine Kamara',
     description: 'Photography Portfolio',
     url: 'https://photos.agarun.com',
-    siteName: "Aaron Agarunov's Photography Portfolio",
+    siteName: "Jasmine Kamara's Photography Portfolio",
     images: [
       {
         url: 'https://images.ctfassets.net/hgydmrrpr52m/51698HSeL6XwsGGkNoevym/fe4b55fbcb4431a6a75f14e6b2ebeb6b/meta_tag_1.jpg',

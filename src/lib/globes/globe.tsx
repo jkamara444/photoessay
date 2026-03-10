@@ -12,6 +12,7 @@ import { Album, AlbumTitle, types } from '@/types/albums';
 import { titleToSlug } from '@/lib/api/slug';
 import Link from 'next/link';
 import { AlbumCard } from './card';
+import { THEME_COLORS } from '@/lib/colors';
 
 type Ref = CustomGlobeMethods | undefined; // Reference to globe instance
 type GlobeEl = React.MutableRefObject<Ref>; // React `ref` passed to globe element
@@ -411,17 +412,17 @@ function Globe({ albums }: { albums: Array<Album> }) {
         polygonSideColor={() => 'rgba(255, 255, 255, 0)'}
         polygonStrokeColor={() => (isMac ? 'black' : 'darkslategray')} // compensate for platform's polygon rendering differences
         pointsData={points}
-        pointColor={() => 'rgba(255, 0, 0, 0.75)'}
+        pointColor={() => THEME_COLORS.PRIMARY}
         pointAltitude={pointAltitude}
         pointRadius={point => (point as { radius: number }).radius}
         pointsMerge={true}
         ringsData={rings}
-        ringColor={() => colorInterpolator}
+        ringColor={() => THEME_COLORS.PRIMARY}
         ringMaxRadius="maxR"
         ringPropagationSpeed="propagationSpeed"
         ringRepeatPeriod="repeatPeriod"
         arcsData={arcs}
-        arcColor={'color'}
+        arcColor={() => THEME_COLORS.PRIMARY}
         arcDashLength={() => randomInRange(0.06, 0.7) / 1} // the bigger the ranges, the calmer it looks
         arcDashGap={() => randomInRange(0.025, 0.4) * 10}
         arcDashAnimateTime={() => randomInRange(0.08, 0.8) * 20000 + 500}
@@ -432,7 +433,7 @@ function Globe({ albums }: { albums: Array<Album> }) {
 
       <section className="content-container grow text-3xl">
         <h1 className="font-bold mb-12 sm:mb-20 text-center md:text-left">
-          Aaron Agarunov
+          Jasmine Kamara
         </h1>
 
         <ul
@@ -453,7 +454,7 @@ function Globe({ albums }: { albums: Array<Album> }) {
               >
                 <Link
                   href={`/${titleToSlug(album.title)}`}
-                  className="hover:text-gray-500"
+                  className="hover:text-[#ff4586]"
                 >
                   {album.title}
                 </Link>
