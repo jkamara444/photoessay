@@ -3,6 +3,7 @@ export const albums = [
     title: "New York",
     slug: "new-york",
     description: "",
+    date: null,
     photos: [
 
     ],
@@ -17,6 +18,7 @@ export const albums = [
     title: "Ghana",
     slug: "ghana",
     description: "",
+    date: null,
 
     a6400: [
       { src: "/photos/ghana/a6400/paajoe.jpg" }
@@ -45,6 +47,8 @@ export const albums = [
   {
     title: "Mexico",
     slug: "mexico",
+    description: "",
+    date: null,
 
     a6400: [
 
@@ -63,6 +67,8 @@ export const albums = [
   {
     title: "Indonesia",
     slug: "indonesia",
+    description: "",
+    date: null,
 
     a6400: [
     ],

@@ -27,7 +27,8 @@ export const AlbumSchema = z.object({
   ),
   color: HexSchema,
   order: z.number(),
-  type: z.enum(['location', 'custom'])
+  type: z.enum(['location', 'custom']),
+  slug: z.string()
 });
 export type Album = z.infer<typeof AlbumSchema>;
 
