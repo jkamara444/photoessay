@@ -29,16 +29,16 @@ const MasonryItem = ({
 function currentColumnWidth() {
   if (window.innerWidth > 2000) {
     // 3xl
-    return 425;
+    return 380;
   } else if (window.innerWidth > 1536) {
     // 2xl
-    return 400;
+    return 350;
   } else if (window.innerWidth > 1280) {
     // xl
-    return 350;
+    return 300;
   } else {
     // mobile-ish
-    return 250;
+    return 200;
   }
 }
 
@@ -80,10 +80,10 @@ export const Masonry = ({
       <MasonicMasonry
         items={items}
         render={MasonryItem}
-        columnGutter={window.innerWidth <= 512 ? 9 : 18}
+        columnGutter={window.innerWidth <= 512 ? 6 : 12}
         columnWidth={columnWidth}
         itemHeightEstimate={averageHeight}
-        maxColumnCount={4}
+        maxColumnCount={window.innerWidth > 1536 ? 5 : 4}
         overscanBy={1}
         {...props}
       />

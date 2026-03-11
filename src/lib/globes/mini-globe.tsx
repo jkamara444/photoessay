@@ -6,10 +6,11 @@ import createGlobe, { COBEOptions, Marker } from 'cobe';
 import { useCallback, useEffect, useRef } from 'react';
 import { useSpring } from 'react-spring';
 
+
 const GLOBE_CONFIG: COBEOptions = {
   width: 1024,
   height: 1024,
-  onRender: () => {},
+  onRender: () => { },
   devicePixelRatio: 2,
   phi: 0,
   theta: 0.42,
@@ -19,7 +20,7 @@ const GLOBE_CONFIG: COBEOptions = {
   mapBrightness: 1,
   mapBaseBrightness: 0,
   baseColor: [0.995, 0.995, 0.995],
-  markerColor: [251 / 255, 21 / 255, 21 / 255],
+  markerColor: [255 / 255, 74 / 255, 167 / 255],
   glowColor: [1, 1, 1],
   opacity: 0.55,
   markers: []
@@ -112,8 +113,8 @@ export default function Globe({
 
     setTimeout(
       () =>
-        (canvasRef.current!.style.opacity =
-          window.innerWidth <= 640 ? '0.5' : '0.85')
+      (canvasRef.current!.style.opacity =
+        window.innerWidth <= 640 ? '0.5' : '0.85')
     );
     return () => globe.destroy();
   }, [canvasRef]);

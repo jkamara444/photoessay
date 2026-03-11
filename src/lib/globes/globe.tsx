@@ -454,7 +454,7 @@ function Globe({ albums }: { albums: Array<Album> }) {
               >
                 <Link
                   href={`/${titleToSlug(album.title)}`}
-                  className="hover:text-[#ff4586]"
+                  className="hover:text-[rgba(255,69,134,1)]"
                 >
                   {album.title}
                 </Link>

@@ -18,18 +18,13 @@ function Contact() {
         </h2>
         <ul className="text-lg font-medium">
           <li>
-            <ExternalLink href="https://instagram.com/agarunov">
-              Instagram
-            </ExternalLink>
-          </li>
-          <li>
-            <ExternalLink href="https://twitter.com/agarune">
-              Twitter
+            <ExternalLink href="https://www.linkedin.com/in/jasmine-kamara/">
+              LinkedIn
             </ExternalLink>
           </li>
         </ul>
       </div>
-      <div className="border border-dashed border-gray-300 rounded-lg p-4 -mt-4">
+      {/* <div className="border border-dashed border-gray-300 rounded-lg p-4 -mt-4">
         <h2 className="uppercase tracking-tight text-sm mb-1 font-light text-gray-500">
           Links
         </h2>
@@ -43,7 +38,7 @@ function Contact() {
             <ExternalLink href="https://agarun.com">Personal Site</ExternalLink>
           </li>
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 }
@@ -71,18 +66,17 @@ async function AboutPage() {
           w-full relative overflow-hidden`}
       >
         <section className="z-20 relative max-w-96">
-          <h1 className="font-bold text-4xl tracking-tight">Aaron Agarunov</h1>
-          <p className="text-2xl text-gray-700 font-light">
-            <span className="text-gray-300">✦</span> Photography Portfolio
+          <h1 className="font-bold text-4xl tracking-tight">Jasmine Kamara</h1>
+          <p className="text-2xl text-gray-700 font-light mt-3">
+            <span className="text-gray-300">
+              <img src="/photos/sankofabird.png" alt="" className="w-12 h-12 inline" />
+            </span> bourdain arc
           </p>
 
-          <p className="mt-20 mb-6 text-lg">{`
-        I'm a software developer & artist from New York that's super inspired by a lot of different things. Thanks for checking out the site!
-        `}</p>
+          <p className="mt-20 mb-6 text-lg">hi im jasmine and this is a collection of stories told through from photos from my time abroad</p>
 
           <p className="mb-32 text-lg">
-            The website is open source on GitHub, built with TypeScript and
-            React, and hosted using Pages and Contentful.
+
           </p>
 
           <Contact />
