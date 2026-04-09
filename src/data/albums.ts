@@ -55,6 +55,15 @@ export const albums = [
     ],
 
     photoEssay: [
+      { src: "/photos/mexico/photoessay2/oaxacafemicide.jpg" },
+      { src: "/photos/mexico/photoessay2/palestineoaxaca.jpg" },
+      { src: "/photos/mexico/photoessay2/nativeamericanmaga.jpg" },
+      { src: "/photos/mexico/photoessay2/juana.jpg" },
+      { src: "/photos/mexico/photoessay2/learnspanish.jpg" },
+      { src: "/photos/mexico/photoessay2/gelatato.jpg" },
+      { src: "/photos/mexico/photoessay2/gentrification1.jpg" },
+      { src: "/photos/mexico/photoessay2/gentrification2.jpg" },
+      { src: "/photos/mexico/photoessay2/gentrification3.jpg" }
     ],
 
     color: "#ff0066",
